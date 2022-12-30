@@ -26,7 +26,29 @@ ll binpow(ll a, ll b){
 
 
 void solve(){
-	//1700 rating question tried but found out really tough, will definitely try later
+	ll n;
+	cin>>n;
+	vll a(n),b(n);
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	int f=1,c1=0,c0=0;
+	for(int i=0;i<n;i++){
+		cin>>b[i];
+		if(b[i])c1++;
+		else c0++;
+	}
+	for(int i=1;i<n;i++){
+		if(a[i]<a[i-1])f=0;
+	}
+	if(f){
+		cout<<"YES\n";
+		return;
+	}
+	if(c1!=0 && c0!=0){
+		cout<<"YES\n";
+	}else cout<<"NO\n";
+	
 }
 
 
